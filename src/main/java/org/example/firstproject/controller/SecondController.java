@@ -26,4 +26,3 @@ public class SecondController {
         return "quote";
     }
 }
-
