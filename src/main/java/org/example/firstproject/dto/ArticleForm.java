@@ -1,20 +1,26 @@
 package org.example.firstproject.dto;
 
-public class ActionForm {
+import org.example.firstproject.entity.Article;
+
+public class ArticleForm {
     private String title;
+    private String content;
 
     @Override
     public String toString() {
-        return "ActionForm{" +
+        return "ArticleForm{" +
                 "title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 '}';
     }
 
-    private String content;
-
-    public ActionForm(String title, String content) {
+    public ArticleForm(String title, String content) {
         this.title = title;
         this.content = content;
+    }
+
+
+    public Article toEntity() {
+        return new Article(null, title, content);
     }
 }
