@@ -1,5 +1,6 @@
 package org.example.firstproject.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.firstproject.dto.ArticleForm;
 import org.example.firstproject.entity.Article;
 import org.example.firstproject.repository.ArticleRepository;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+@Slf4j
 @Controller
 public class ArticleController {
 
@@ -23,11 +25,17 @@ public class ArticleController {
 
     @PostMapping("/articles/create")
     public String createArticle(ArticleForm form) {
-        System.out.printf(form.toString());
+        log.info(form.toString());
+//        System.out.printf(form.toString());
+
         Article article = form.toEntity();
-        System.out.printf(article.toString());
+        log.info(article.toString());
+//        System.out.printf(article.toString());
+
         Article saved = articleRepository.save(article);
-        System.out.printf(saved.toString());
+        log.info(saved.toString());
+//        System.out.printf(saved.toString());
+
         return "";
     }
 }
