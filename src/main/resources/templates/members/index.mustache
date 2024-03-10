@@ -1,0 +1,15 @@
+{{>layouts/header}}
+<table class="table">
+    <thead>
+    <tr class="table-dark">
+        <th scope="col">Id</th>
+        <td scope="col">Password</td>
+    </thead>
+    {{#memberList}}
+        <tr>
+            <th>{{id}}</th>
+            <td>{{password}}</td>
+        </tr>
+    {{/memberList}}
+</table>
+{{>layouts/footer}}
